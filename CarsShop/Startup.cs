@@ -20,7 +20,7 @@ namespace CarsShop
         {
             services.AddTransient<IAllCars, MockCars>();
             services.AddTransient<ICarsCategory, MockCategory>();
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
 
         }
 
@@ -33,9 +33,11 @@ namespace CarsShop
                 app.UseStatusCodePages();
                 app.UseStaticFiles();
                 app.UseMvcWithDefaultRoute();
+               
             }
 
             app.UseRouting();
+           
 
             app.UseEndpoints(endpoints =>
             {
