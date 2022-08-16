@@ -1,4 +1,5 @@
 ﻿using CarsShop.Data.Interfaces;
+using CarsShop.VIewModels;
 using Microsoft.AspNetCore.Mvc;
 namespace CarsShop.Controllers
 {
@@ -15,9 +16,11 @@ namespace CarsShop.Controllers
 
         public ViewResult CarsCollectionView()
         {
-            ViewBag.Category = "Some new";
-            var cars = _allCars.Cars;
-            return View(cars);  
+            ViewBag.Title = "Список автомобилей";
+            CarsCollectionViewModel obj = new CarsCollectionViewModel();
+            obj.AllCars = _allCars.Cars;
+            obj.CurrCategory = "Автомобили";
+            return View(obj);  
         }
 
 

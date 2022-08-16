@@ -1,0 +1,15 @@
+﻿body {
+    background-color: greenyellow;
+    display: flex;
+    flex-direction:column;
+  
+}
+#ImgCar {
+    width: 70%;
+    height: 60%;
+}
+footer{
+    align-items:end;
+    justify-content:end
+    
+}

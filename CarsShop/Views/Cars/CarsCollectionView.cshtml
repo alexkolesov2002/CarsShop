@@ -1,28 +1,20 @@
-﻿@using CarsShop.Data.Models
-@model IEnumerable<Car>
+﻿<h1>Все автомобили </h1>
+<h3>@Model.CurrCategory</h3>
+<div class="row mt-5 mb-2">
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CarsCollectionView</title>
-</head>
-<body>
-    <h1>Все автомобили </h1>
-    <h3>@ViewBag.Category</h3>
     @{
-        foreach (var car in Model)
+        foreach (var car in Model.AllCars)
         {
-            <div>
-            <h2>Модель: @car.Name</h2>
-            <p> Цена: @car.Price.ToString("c")</p>
+
+            <div class="col-lg-4">
+                <img src=@car.Image alt=@car.Name class= img-thumbnail id="ImgCar">
+                <h2> @car.Name</h2>
+                <p>@car.ShortDesk </p>
+                <p> Цена: @car.Price.ToString("c")</p>
+                <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+
             </div>
         }
     }
-</body>
-</html>
+</div>
+

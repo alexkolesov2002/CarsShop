@@ -5,7 +5,7 @@ namespace CarsShop.VIewModels
 {
     public class CarsCollectionViewModel
     {
-        public IEnumerable<Car> GetAllCars { get; set; }
+        public IEnumerable<Car> AllCars { get; set; }
 
         public string CurrCategory { get; set;}
     }
